@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
@@ -15,7 +18,10 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { SideNavbarComponent } from './side-navbar/side-navbar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { LoaderComponent } from './loader/loader.component';
+
+import { LoaderService } from './loader.service';
 
 @NgModule({
   imports: [
@@ -31,7 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       InMemoryDataService, { dataEncapsulation: false }
     ),
 
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatProgressBarModule
   ],
   declarations: [
     AppComponent,
@@ -40,8 +47,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
-    SideNavbarComponent
+    SideNavbarComponent,
+    LoaderComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [
+    LoaderService
+]
 })
 export class AppModule { }
