@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
+import {TableModule} from 'primeng/table';
+
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
@@ -38,7 +40,8 @@ import { LoaderService } from './loader.service';
     ),
 
     BrowserAnimationsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    TableModule
   ],
   declarations: [
     AppComponent,
